@@ -86,8 +86,20 @@ a:hover { color: #036; }
     \\ ========================================== //
 */
 
+#container > header {
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 1em;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+#container > header h1 {
+	font-size: 2em;
+	text-align: center;
+}
+
 /* twitter search */
-.twitter-search-results {
+#twitter-search-results {
 	background-color: #ccc;
 	margin: 0 auto;
 	max-width: 960px;
@@ -98,6 +110,13 @@ a:hover { color: #036; }
 	background-color: #fff;
 	margin-bottom: 1em;
 	padding: 1em;
+	   -moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	        border-radius: 0.5em;
+}
+
+.tweet:last-child {
+	margin-bottom: 0;
 }
 
 .tweet header {
@@ -129,8 +148,29 @@ a:hover { color: #036; }
 	margin-top: 1em;
 }
 
+#twitter-search-results .pagination {
+	overflow: hidden;
+}
 
+#twitter-search-results .pagination a {
+	font-size: 1.5em;
+}
 
+#twitter-search-results .pagination a.next {
+	float: right;
+}
+
+#twitter-search-results .pagination a.prev {
+	float: left;
+}
+
+#twitter-search-results .loading {
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	font-size: 2em;
+	padding: 1em;
+	text-align: center;
+}
 
 
 

@@ -14,8 +14,8 @@
 	<r:use modules="modernizr,jquery,gr8"/>
 	<r:resourceLink uri="/images/favicon.ico"/>
 	<r:resourceLink uri="/images/apple-touch-icon.png" type="appleicon"/>
-	<r:layoutResources/>
 	<g:layoutHead />
+	<r:layoutResources/>
 </head>
 <body>
 	<div id="container">

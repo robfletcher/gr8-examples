@@ -9,4 +9,13 @@ modules = {
 		resource url: "css/handheld.css", attrs: [media: "handheld"]
 	}
 	
+	"infinite-scroll" {
+		dependsOn "jquery"
+		resource url: "js/plugins/infinite-scroll.js"
+	}
+	
+	twitter {
+		dependsOn "modernizr", "gr8", "infinite-scroll"
+	}
+	
 }
