@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<meta name="layout" content="main">
 		<title>${poll.question}</title>
 	</head>
 	<body>
