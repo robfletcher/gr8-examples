@@ -3,13 +3,14 @@
 	<head>
 		<meta name="layout" content="main">
 		<title>${poll.question}</title>
+		<r:use modules="polls"/>
 	</head>
 	<body>
 		<g:form action="cast">
 			<input type="hidden" name="id" value="${poll.id}">
-			<fieldset>
+			<fieldset class="poll">
 				<legend>${poll.question}</legend>
-				<ol>
+				<ol class="answers">
 					<g:each var="answer" in="${poll.answers}" status="i">
 						<li>
 							<label><input type="radio" name="answer" value="${i}">${answer}</label>

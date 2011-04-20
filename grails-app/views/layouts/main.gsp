@@ -11,7 +11,6 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<r:use modules="modernizr,jquery,gr8"/>
 	<r:resourceLink uri="/images/favicon.ico"/>
 	<r:resourceLink uri="/images/apple-touch-icon.png" type="appleicon"/>
 	<g:layoutHead />

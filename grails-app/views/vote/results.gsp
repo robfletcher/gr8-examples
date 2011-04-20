@@ -3,6 +3,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<title>${poll.question}</title>
+		<r:use modules="polls"/>
 	</head>
 	<body>
 		<table>
