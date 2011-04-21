@@ -6,7 +6,7 @@
 		<r:use modules="polls"/>
 	</head>
 	<body>
-		<table>
+		<table class="poll-results">
 			<caption>${poll.question}</caption>
 			<thead>
 				<tr>
@@ -18,7 +18,7 @@
 				<g:each var="answer" in="${poll.answers}" status="i">
 					<tr>
 						<th scope="row">${answer}</th>
-						<td>${gr8.examples.Vote.countByPollAndAnswer(poll, i)}</td>
+						<td class="votes">${gr8.examples.Vote.countByPollAndAnswer(poll, i)}</td>
 					</tr>
 				</g:each>
 			</tbody>
