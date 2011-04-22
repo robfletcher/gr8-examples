@@ -6,3 +6,5 @@
 .DS_Store
 /target/
 /out/
+*.iml
+/.idea/
