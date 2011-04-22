@@ -6,7 +6,7 @@
 		<r:use modules="polls"/>
 	</head>
 	<body>
-		<g:form action="cast">
+		<g:form action="vote">
 			<input type="hidden" name="id" value="${poll.id}">
 			<fieldset class="poll">
 				<legend>${poll.question}</legend>

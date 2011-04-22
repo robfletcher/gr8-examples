@@ -4,6 +4,7 @@ class Poll {
 	
 	String question
 	List<String> answers
+	Date dateCreated
 	
 	static hasMany = [answers: String]
 

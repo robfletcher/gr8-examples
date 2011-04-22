@@ -62,3 +62,26 @@ table.poll-results {
 		text-align: right;
 	}
 }
+
+#sidebar {
+	h1 {
+	    font-size: @base-font-size;
+		margin-top: @gutter;
+		padding: @gutter;
+	}
+
+	ul {
+		margin-left: @gutter;
+	}
+
+	li {
+	    font-size: @base-font-size * .75;
+	 	list-style-type: none;
+		margin: (@gutter / 2) 0;
+
+		.votes {
+		    color: lighten(@color, 25%);
+			display: block;
+		}
+	}
+}

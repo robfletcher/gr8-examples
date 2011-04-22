@@ -104,6 +104,20 @@ body {
 	max-width: 960px;
 }
 
+#main {
+	float: left;
+	width: 65%;
+}
+
+#sidebar {
+	float: left;
+	width: 35%;
+}
+
+footer {
+	clear: both;
+}
+
 #container > header {
 	background-color: rgba(0,0,0,0.5);
 	color: #fff;
