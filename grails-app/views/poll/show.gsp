@@ -20,5 +20,6 @@
 				<button type="submit">Vote</button>
 			</fieldset>
 		</g:form>
+		<g:render template="pagination" bean="${poll}" var="poll"/>
 	</body>
 </html>

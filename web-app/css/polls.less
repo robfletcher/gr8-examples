@@ -1,4 +1,3 @@
-@container-width: 85%;
 @color: #444;
 @border-color: lighten(@color, 50%);
 @base-font-size: 20px;
@@ -8,9 +7,8 @@
 fieldset.poll {
 	border: 1px solid @border-color;
 	color: @color;
-	margin: @gutter auto;
-	width: @container-width;
-	
+	margin: @gutter;
+
 	legend {
 		font-size: @header-font-size;
 		margin-left: @gutter;
@@ -21,29 +19,30 @@ fieldset.poll {
 		font-size: @base-font-size;
 		line-height: @base-font-size;
 		list-style-type: none;
-		margin-bottom: @gutter;
-	
-		label {
-		}
-	
+		margin-top: @gutter;
+
 		input[type=radio] {
 			margin-right: @gutter;
-			vertical-align: middle;
+			vertical-align: top;
 		}
 	}
 	
 	button {
 		display: block;
-		font-size: @header-font-size;
-		margin: 0 auto;
-		padding: @gutter;
+		float: right;
+		font-size: @base-font-size * 1.25;
+		margin: @gutter;
+		padding: @gutter / 2;
 	}
 }
 
 table.poll-results {
 	border: 1px solid @border-color;
-	margin: @gutter auto;
-	width: @container-width;
+	margin: @gutter;
+
+	col.votes {
+		width: 10%;
+	}
 
 	caption {
 		font-size: @header-font-size;
@@ -55,11 +54,34 @@ table.poll-results {
 		font-size: @base-font-size;
 		padding: @gutter;
 		text-align: left;
-		
 	}
 
 	td.votes {
 		text-align: right;
+	}
+}
+
+nav.pagination {
+    font-size: @base-font-size * .75;
+	overflow: hidden;
+	margin: @gutter;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+		&.previous {
+			float: left;
+			&:before {
+				content: "\00ab\00a0";
+			}
+		}
+		&.next {
+			float: right;
+			&:after {
+				content: "\00a0\00bb";
+			}
+		}
 	}
 }
 

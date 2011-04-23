@@ -5,9 +5,14 @@
 		<title>${poll.question}</title>
 		<r:use modules="polls"/>
 	</head>
+
 	<body>
 		<table class="poll-results">
 			<caption>${poll.question}</caption>
+			<colgroup>
+				<col class="answer">
+				<col class="votes">
+			</colgroup>
 			<thead>
 				<tr>
 					<td></td>
@@ -23,5 +28,6 @@
 				</g:each>
 			</tbody>
 		</table>
+		<g:render template="pagination" bean="${poll}" var="poll"/>
 	</body>
 </html>
