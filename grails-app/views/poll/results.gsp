@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<title>${poll.question}</title>
+		<title>Pollr: Results</title>
 		<r:use modules="polls"/>
 	</head>
 

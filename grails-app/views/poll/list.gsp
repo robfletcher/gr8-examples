@@ -1,8 +1,13 @@
-<ul>
-	<g:each var="poll" in="${polls}">
-		<li>
-			<g:link action="show" id="${poll.id}">${poll.question}</g:link>
-			<span class="votes">${gr8.examples.Vote.countByPoll(poll)} votes</span>
-		</li>
-	</g:each>
-</ul>
+<!doctype html>
+<html>
+	<head>
+		<meta name="layout" content="main">
+		<title>Pollr: Polls</title>
+		<r:use modules="polls"/>
+	</head>
+
+	<body>
+		<g:render template="list" bean="${polls}" var="polls"/>
+		<g:paginate total="${pollCount}"/>
+	</body>
+</html>

@@ -1,6 +1,7 @@
 package gr8.examples
 
-import javax.servlet.http.*
+import javax.servlet.http.Cookie
+import org.codehaus.groovy.grails.web.util.WebUtils
 import static javax.servlet.http.HttpServletResponse.*
 
 class PollController {
@@ -21,7 +22,12 @@ class PollController {
 	}
 
 	def list = {
-		[polls: Poll.list(params)]
+		def pollList = Poll.list(params)
+		if (WebUtils.isIncludeRequest(request)) {
+			render template: "list", model: [polls: pollList]
+		} else {
+			[polls: pollList, pollCount: Poll.count()]
+		}
 	}
 
 	def show = {
