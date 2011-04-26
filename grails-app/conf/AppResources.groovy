@@ -16,6 +16,7 @@ modules = {
 	
 	twitter {
 		dependsOn "modernizr", "boilerplate", "infinite-scroll"
+		resource url: "css/twitter.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 	
 	polls {

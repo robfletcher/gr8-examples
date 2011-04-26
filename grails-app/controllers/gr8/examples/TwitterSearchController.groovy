@@ -1,7 +1,5 @@
 package gr8.examples
 
-import grails.converters.*
-
 class TwitterSearchController {
 	
 	def twitterService

@@ -1,0 +1,60 @@
+@profile-image-size: 48px;
+
+table {
+    margin: 1em auto;
+
+    caption {
+    	font-size: 2em;
+    	padding: 0.25em 0.5em;
+    }
+
+    th, td {
+    	border: 1px solid #ccc;
+    }
+
+    thead {
+    	th {
+    		font-size: 1.5em;
+    		padding: 0.5em;
+    	}
+    }
+
+	tbody {
+	    tr:nth-child(odd) {
+			background: #eee;
+	    }
+	    td, th {
+	 		vertical-align: middle;
+	    }
+		td {
+		    font-size: 3em;
+	    	padding: 0 0.5em;
+			text-align: right;
+		}
+		th {
+		    font-size: 2em;
+		    padding: 0.25em;
+	  		text-align: left;
+		}
+	}
+}
+
+a.profile {
+	display: block;
+	text-decoration: none;
+
+	img {
+	    margin-right: 0.25em;
+		width: @profile-image-size;
+		height: @profile-image-size;
+		vertical-align: middle;
+	}
+
+	.name {
+		vertical-align: middle;
+	}
+
+	&:hover .name {
+		text-decoration: underline;
+	}
+}
