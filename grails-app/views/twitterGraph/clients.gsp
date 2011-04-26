@@ -3,7 +3,16 @@
 	<head>
 		<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
 		<title>Twitter Results for '${q}'</title>
-		<r:use module="twitter"/>
+		<r:use module="graphs"/>
+		<r:script disposition="head">
+			$(document).ready(function() {
+				$('#twitter-clients').visualize({
+					type: 'pie',
+					width: 500,
+					height: 500
+				});
+			});
+		</r:script>
 	</head>
 
 	<body>
@@ -12,7 +21,7 @@
 			<caption>Twitter clients</caption>
 			<thead>
 				<tr>
-					<th scope="col">Client</th>
+					<td></td>
 					<th scope="col">Tweets</th>
 				</tr>
 			</thead>

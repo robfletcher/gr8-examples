@@ -13,10 +13,21 @@ modules = {
 		dependsOn "jquery"
 		resource "js/plugins/infinite-scroll.js"
 	}
+
+	visualize {
+		dependsOn "jquery"
+		resource "js/plugins/visualize.jQuery.js"
+		resource "css/visualize.css"
+		resource "css/visualize-light.css"
+	}
 	
 	twitter {
-		dependsOn "modernizr", "boilerplate", "infinite-scroll"
-		resource url: "css/twitter.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
+		dependsOn "modernizr", "jquery", "boilerplate", "infinite-scroll"
+	}
+
+	graphs {
+		dependsOn "modernizr", "boilerplate", "visualize"
+		resource url: "css/graphs.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 	
 	polls {
