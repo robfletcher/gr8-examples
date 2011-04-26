@@ -26,11 +26,6 @@
 	        <g:layoutBody />
 		</div>
 		
-		<section id="sidebar">
-			<h1>Latest Polls</h1>
-			<g:include controller="poll" action="list" params="[max: 4, sort: 'dateCreated', order: 'desc']"/>
-		</section>
-
 		<footer>
 
 		</footer>
