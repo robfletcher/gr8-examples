@@ -5,11 +5,13 @@
 		<title>Twitter Results for '${q}'</title>
 		<r:use module="graphs"/>
 		<r:script disposition="head">
-			$(document).ready(function() {
-				$('#twitter-users').visualize({
-					width: 800,
-					height: 300
-				});
+			$(function() {
+				if (Modernizr.canvas) {
+					$('#twitter-users').visualize({
+						width: 800,
+						height: 300
+					});
+				}
 			});
 		</r:script>
 	</head>
