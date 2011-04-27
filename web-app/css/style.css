@@ -111,84 +111,15 @@ body {
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
+.no-rgba #container > header {
+	background-color: #7f7f7f;
+}
+
 #container > header h1 {
 	font-size: 2em;
 	text-align: center;
 }
 
-/* twitter search */
-#twitter-search-results {
-	background-color: #ccc;
-	margin: 0 auto;
-	max-width: 960px;
-	padding: 1em;
-}
-
-.tweet {
-	background-color: #fff;
-	margin-bottom: 1em;
-	padding: 1em;
-	   -moz-border-radius: 0.5em;
-	-webkit-border-radius: 0.5em;
-	        border-radius: 0.5em;
-}
-
-.tweet:last-child {
-	margin-bottom: 0;
-}
-
-.tweet header {
-	margin-bottom: 1em;
-	position: relative;
-}
-
-.tweet h3 {
-	font-size: 2em;
-	line-height: 48px;
-	margin-left: 48px;
-	text-indent: 0.5em;
-}
-
-.tweet img.profile-image {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 48px;
-	height: 48px;
-}
-
-.tweet p {
-	font-size: 1.5em;
-}
-
-.tweet time {
-	display: block;
-	margin-top: 1em;
-}
-
-#twitter-search-results .pagination {
-	overflow: hidden;
-}
-
-#twitter-search-results .pagination a {
-	font-size: 1.5em;
-}
-
-#twitter-search-results .pagination a.next {
-	float: right;
-}
-
-#twitter-search-results .pagination a.prev {
-	float: left;
-}
-
-#twitter-search-results .loading {
-	background-color: rgba(0,0,0,0.5);
-	color: #fff;
-	font-size: 2em;
-	padding: 1em;
-	text-align: center;
-}
 
 
 

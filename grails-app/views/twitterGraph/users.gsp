@@ -4,16 +4,6 @@
 		<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
 		<title>Twitter Results for '${q}'</title>
 		<r:use module="graphs"/>
-		<r:script disposition="head">
-			$(function() {
-				if (Modernizr.canvas) {
-					$('#twitter-users').visualize({
-						width: 800,
-						height: 300
-					});
-				}
-			});
-		</r:script>
 	</head>
 
 	<body>

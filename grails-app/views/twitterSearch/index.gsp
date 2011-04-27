@@ -3,10 +3,7 @@
 <head>
 	<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
 	<title>Twitter Results for '${q}'</title>
-	<r:use module="twitter"/>
-	<r:script>
-		jQuery('#twitter-search-results').infiniteScroll('.tweet');
-	</r:script>
+	<r:use module="scroll"/>
 </head>
 <body>
 	<section id="twitter-search-results">

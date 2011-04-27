@@ -1,42 +1,34 @@
+<!doctype html>
 <html>
     <head>
-        <title>Welcome to Grails</title>
+        <title>Building Progressive UIs with Grails</title>
         <meta name="layout" content="main" />
+        <r:use module="index"/>
     </head>
     <body>
-        <aside id="status">
-			<h1>Application Status</h1>
-			<ul>
-			    <li>App version: <g:meta name="app.version"></g:meta></li>
-			    <li>Grails version: <g:meta name="app.grails.version"></g:meta></li>
-			    <li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-			    <li>JVM version: ${System.getProperty('java.version')}</li>
-			    <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-			    <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-			    <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-			    <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-			    <g:set var="pluginManager" value="${applicationContext.getBean('pluginManager')}"></g:set>
-			    <g:each var="plugin" in="${pluginManager.allPlugins}">
-			        <li>${plugin.name} - ${plugin.version}</li>
-			    </g:each>
-			</ul>
-        </aside>
-        <section id="pageBody">
-            <h1>Welcome to Grails</h1>
-            <p>Congratulations, you have successfully started your first Grails application! At the moment
-            this is the default page, feel free to modify it to either redirect to a controller or display whatever
-            content you may choose. Below is a list of controllers that are currently deployed in this application,
-            click on each to execute its default action:</p>
-
-            <nav id="controllerList">
-                <h2>Available Controllers:</h2>
+        <section id="index">
+            <nav id="examples">
+                <h2>Examples:</h2>
                 <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-                    </g:each>
+                    <li>
+                        Pagination
+                        <ul>
+                            <li><g:link controller="twitterSearch">Pagination -> Infinite scroll</g:link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Forms
+                        <ul>
+                            <li><g:link controller="rating">Radio buttons -> Rating widget</g:link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Charts
+                        <ul>
+                            <li><g:link controller="twitterGraph" action="users">Table -> Bar chart</g:link></li>
+                            <li><g:link controller="twitterGraph" action="clients">Table -> Pie chart</g:link></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </section>
