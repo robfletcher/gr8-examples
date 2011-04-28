@@ -20,6 +20,11 @@ modules = {
 		resource "js/plugins/visualize/css/visualize.css"
 		resource "js/plugins/visualize/css/visualize-light.css"
 	}
+	
+	"star-rating" {
+		dependsOn "jquery"
+		resource "js/plugins/star-rating.js"
+	}
 
     index {
         dependsOn "modernizr", "boilerplate"
@@ -27,7 +32,7 @@ modules = {
     }
 	
 	scroll {
-		dependsOn "modernizr", "jquery", "boilerplate", "infinite-scroll"
+		dependsOn "modernizr", "boilerplate", "infinite-scroll"
 		resource "js/scroll.js"
 		resource url: "css/scroll.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_scroll"
 	}
@@ -44,7 +49,8 @@ modules = {
 	}
 
 	forms {
-		dependsOn "modernizr", "boilerplate"
+		dependsOn "modernizr", "boilerplate", "star-rating"
+		resource "js/forms.js"
 		resource url: "css/forms.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_forms"
 	}
 	

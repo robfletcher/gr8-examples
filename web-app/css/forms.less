@@ -7,7 +7,7 @@ em {
 
 #album {
     border: 1px solid #ccc;
-	margin: 2em 1em;
+	margin: 1em;
 	padding: 1em;
 	overflow: hidden;
 
@@ -24,7 +24,7 @@ em {
 
 	img {
 	    float: left;
-	    margin: 0 1em 0 0;
+	    margin: 0 1em 1em 0;
 	}
 
 	ol.tracks {
@@ -93,5 +93,25 @@ em {
 	img {
 		width: @small-image-size;
 		height: @small-image-size;
+	}
+}
+
+.star-rating {
+	display: inline-block;
+	vertical-align: middle;
+	a {
+		background-image: url(../images/forms/stars.png);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		display: inline-block;
+		text-indent: -9999px;
+		width: 22px;
+		height: 22px;
+		&.on {
+			background-position: 0 -22px;
+		}
+		&.hovered {
+			background-position: 0 -44px;
+		}
 	}
 }

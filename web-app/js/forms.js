@@ -1,0 +1,3 @@
+$(function() {
+	$('form.rating').starRating();
+});

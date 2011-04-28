@@ -19,7 +19,7 @@
                     <li>
                         Forms
                         <ul>
-                            <li><g:link controller="rating">Radio buttons -> Rating widget</g:link></li>
+                            <li><g:link controller="rating" action="album" id="1">Radio buttons -> Rating widget</g:link></li>
                         </ul>
                     </li>
                     <li>

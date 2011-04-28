@@ -3,10 +3,12 @@ package gr8.examples.forms
 class Rating {
 
     String userToken
-    int rating
+    int score
+
+	static belongsTo = [album: Album]
 
     static constraints = {
-        userToken blank: false, unique: true
-        rating range: 1..5
+        userToken blank: false, unique: "album"
+        score range: 1..5
     }
 }
