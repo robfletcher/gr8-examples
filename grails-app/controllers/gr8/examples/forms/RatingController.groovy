@@ -5,57 +5,55 @@ import static javax.servlet.http.HttpServletResponse.*
 
 class RatingController {
 
-    def album = {
-		def album = Album.read(params.id)
-		if (!album) {
+	def beforeInterceptor = {
+		params.album = Album.read(params.id)
+		if (!params.album) {
 			response.sendError SC_NOT_FOUND
-			return
+			return false
 		}
-	
-		def model = [album: album]
-		model.rating = Rating.findByAlbumAndUserToken(album, userToken)
-		model.related = Album.list() - album
+	}
+
+    def album = {
+		def model = [album: params.album]
+		model.rating = Rating.findByAlbumAndUserToken(params.album, userToken)
+		model.related = Album.list() - params.album
 		model
 	}
 
 	def rate = {
-		def album = Album.read(params.id)
-		if (!album) {
-			response.sendError SC_NOT_FOUND
-			return
-		}
-		
-		def cookie = request.cookies.find { it.name == "user-token" }
-		
-		def rating = Rating.findByAlbumAndUserToken(album, userToken)
+		def rating = Rating.findByAlbumAndUserToken(params.album, userToken)
 		if (!rating) {
-			rating = new Rating(album: album, userToken: userToken, score: params.int("score"))
+			rating = new Rating(album: params.album, userToken: userToken, score: params.int("score"))
 		}
 		
 		rating.score = params.int("score")
 		if (!rating.save()) {
-			def message = rating.errors.allErrors.collect {
-				message error: it
-			}.join(", ")
-			response.sendError SC_CONFLICT, message
+			response.sendError SC_CONFLICT, errorMessage(rating)
 			return
 		}
 		
 		if (request.xhr) {
 			render contentType: "text/plain", text: "ok"
 		} else {
-			redirect action: "album", id: album.id
+			redirect action: "album", id: params.album.id
 		}
 	}
-	
+
 	private String getUserToken() {
 		def cookie = request.cookies.find { it.name == "user-token" }
 		if (!cookie) {
 			def token = UUID.randomUUID().toString()
 			cookie = new Cookie("user-token", token)
+			cookie.path = "/"
 			response.addCookie(cookie)
 		}
 		cookie.value
+	}
+
+	private String errorMessage(domainInstance) {
+		domainInstance.errors.allErrors.collect {
+			message error: it
+		}.join(", ")
 	}
 
 }

@@ -1,3 +1,4 @@
 $(function() {
-	$('form.rating').starRating();
+	$('#average-rating .rating').starRating();
+	$('form.rating').starRatingInput();
 });

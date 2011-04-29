@@ -1,6 +1,6 @@
 (function($) {
 
-	$.fn.starRating = function() {
+	$.fn.starRatingInput = function() {
 		var form = $(this);
 		var radios = form.find(':radio');
 		
@@ -49,11 +49,28 @@
 		});
 
 		// insert the stars into the DOM and hide the original form controls
-		starContainer.insertAfter(form.find('legend'));
-		form.find('label').add(':submit').hide();
-		
+		form.children().hide();
+		starContainer.appendTo(form);
+
 		// trigger a change event on the radios so the initial star state is correct
 		radios.change();
 	};
+
+	$.fn.starRating = function() {
+		var container = $(this);
+		var score = Math.round(parseFloat(container.text()));
+
+		// create the elements representing the stars
+		var starContainer = $('<div class="star-rating"></div>');
+		for (var i = 1; i <= 5; i++) {
+			var star = $('<span class="star">' + i + '</span>');
+			if (i <= score) {
+				star.addClass('on');
+			}
+			star.appendTo(starContainer);
+		}
+
+		container.replaceWith(starContainer);
+	}
 	
 })(jQuery);

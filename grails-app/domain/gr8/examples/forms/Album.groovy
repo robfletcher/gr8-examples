@@ -18,5 +18,11 @@ class Album {
 	String toString() {
 		"$title by $artist"
 	}
+	
+	static transients = ["averageRating"]
+
+	Double getAverageRating() {
+		Rating.average(this)
+	}
 
 }

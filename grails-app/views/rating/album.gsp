@@ -19,16 +19,21 @@
 				</g:each>
 			</ol>
 
-			<g:form action="rate" class="rating">
-				<fieldset>
-					<legend>Rating:</legend>
+			<section id="average-rating">
+				<h3>Average rating:</h3>
+				<div class="rating">${album.averageRating}</div>
+			</section>
+
+			<section id="your-rating">
+				<h3>Your rating:</h3>
+				<g:form action="rate" class="rating">
 					<input type="hidden" name="id" value="${album.id}">
 					<g:radioGroup name="score" values="${1..5}" labels="${1..5}" value="${rating?.score}">
 						<label><span class="num">${it.label}</span>${it.radio}</label>
 					</g:radioGroup>
 					<input type="submit" value="Rate">
-				</fieldset>
-			</g:form>
+				</g:form>
+			</section>
 		</article>
 
 		<aside id="related">
