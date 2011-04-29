@@ -112,11 +112,12 @@ em {
 .star-rating {
 	display: inline-block;
 	vertical-align: middle;
-	a, .star {
+	.star {
 		background-image: url(../images/forms/stars.png);
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		display: inline-block;
+		vertical-align: middle;
 		text-indent: -9999px;
 		width: 22px;
 		height: 22px;
@@ -124,7 +125,14 @@ em {
 			background-position: 0 -22px;
 		}
 	}
-	a.hovered {
+	a.star.hovered {
 		background-position: 0 -44px;
 	}
+}
+
+.message {
+	color: #0d5995;
+	display: inline-block;
+	margin: 0 0 0 0.5em;
+	vertical-align: middle;
 }

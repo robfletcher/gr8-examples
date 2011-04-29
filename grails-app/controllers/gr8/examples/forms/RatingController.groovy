@@ -33,7 +33,7 @@ class RatingController {
 		}
 		
 		if (request.xhr) {
-			render contentType: "text/plain", text: "ok"
+			render contentType: "text/plain", text: "Thanks!"
 		} else {
 			redirect action: "album", id: params.album.id
 		}

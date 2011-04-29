@@ -8,7 +8,7 @@
 		var starContainer = $('<div class="star-rating"></div>');
 		for (var i = 1; i <= 5; i++) {
 			var radio = radios.filter('[value=' + i + ']');
-			var star = $('<a href="#">' + i + '</a>');
+			var star = $('<a href="#" class="star">' + i + '</a>');
 			star.appendTo(starContainer);
 			// the star and the radio update each other so bind them together using data
 			star.data('radio', radio);
@@ -44,7 +44,14 @@
 		
 		// the form should submit via AJAX instead of as a regular form submission
 		form.submit(function() {
-			$.post(form.attr('action'), form.serialize());
+			$.post(form.attr('action'), form.serialize(), function(message) {
+				var messageContainer = starContainer.find('.message') 
+				if (messageContainer.size()) {
+					messageContainer.text(message);
+				} else {
+					starContainer.append($('<span class="message">' + message + '</span>'));
+				}
+			});
 			return false;
 		});
 
