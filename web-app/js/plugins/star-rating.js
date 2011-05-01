@@ -49,8 +49,12 @@
 				if (messageContainer.size()) {
 					messageContainer.text(message);
 				} else {
-					starContainer.append($('<span class="message">' + message + '</span>'));
+					messageContainer = $('<span class="message">' + message + '</span>');
+					starContainer.append(messageContainer);
 				}
+				messageContainer.fadeOut(3000, function() {
+					messageContainer.detach();
+				});
 			});
 			return false;
 		});
