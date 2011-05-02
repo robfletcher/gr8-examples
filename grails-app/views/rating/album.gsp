@@ -21,12 +21,6 @@
 					<button type="submit">Add to basket</button>
 				</g:form>
 			</section>
-			
-			<ol class="tracks">
-				<g:each in="${album.tracks}">
-					<li>${it}</li>
-				</g:each>
-			</ol>
 
 			<section id="average-rating">
 				<h3>Average rating:</h3>
@@ -43,6 +37,12 @@
 					<input type="submit" value="Rate">
 				</g:form>
 			</section>
+
+			<ol class="tracks">
+				<g:each in="${album.tracks}">
+					<li>${it}</li>
+				</g:each>
+			</ol>
 		</article>
 
 		<aside id="related">
