@@ -13,6 +13,15 @@
 				<h1 class="title">${album.title}</h1>
 				<h2 class="artist">${album.artist}</h2>
 			</hgroup>
+			
+			<section id="add-to-basket">
+				<span class="price"><g:formatNumber number="${album.price}" type="currency" currencyCode="GBP" /></span>
+				<g:form controller="basket" action="add">
+					<input type="hidden" name="id" value="${album.id}">
+					<button type="submit">Add to basket</button>
+				</g:form>
+			</section>
+			
 			<ol class="tracks">
 				<g:each in="${album.tracks}">
 					<li>${it}</li>
