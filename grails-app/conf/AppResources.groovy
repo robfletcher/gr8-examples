@@ -9,6 +9,12 @@ modules = {
 		resource url: "css/handheld.css", attrs: [media: "handheld"]
 	}
 	
+	facebox {
+		dependsOn "jquery"
+		resource "js/plugins/facebox/facebox.js"
+		resource "js/plugins/facebox/facebox.css"
+	}
+	
 	"infinite-scroll" {
 		dependsOn "jquery"
 		resource "js/plugins/infinite-scroll.js"
@@ -52,6 +58,16 @@ modules = {
 		dependsOn "modernizr", "boilerplate", "star-rating"
 		resource "js/forms.js"
 		resource url: "css/forms.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_forms"
+	}
+	
+	lightbox {
+		dependsOn "facebox"
+		resource "js/lightbox.js"
+	}
+	
+	basket {
+		dependsOn "modernizr", "boilerplate"
+		resource url: "css/basket.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_lightbox"
 	}
 	
 }

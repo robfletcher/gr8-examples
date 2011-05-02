@@ -10,7 +10,12 @@ class BasketController {
 	
 	def show = {
 		use(CollectionUtils) {
-			[basket: basket.cardinalityMap, total: basket.sum { it.price }]
+			def model = [basket: basket.cardinalityMap, total: basket.sum { it.price }]
+			if (request.xhr) {
+				render template: "basket", model: model
+			} else {
+				model
+			}
 		}
 	}
 	
@@ -22,6 +27,15 @@ class BasketController {
 		
 		basket << album
 		
+		if (request.xhr) {
+			forward action: "show"
+		} else {
+			redirect action: "show"
+		}
+	}
+	
+	def clear = {
+		basket.clear()
 		redirect action: "show"
 	}
 	
