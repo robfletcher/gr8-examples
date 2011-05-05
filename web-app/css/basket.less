@@ -1,21 +1,28 @@
+#facebox {
+	h2 {
+		font-size: 1.5em;
+		margin: 0 0 0.25em 0;
+	}
+}
+
 .your-basket {
 	border: 1px solid #ccc;
 	margin: 1em;
 	padding: 1em;
+	h2 {
+		font-size: 1.5em;
+		margin: 0 0 0.25em 0;
+	}
 }
 
 table.basket {
+	font-size: 1.2em;
 	width: 100%;
-	caption {
-		font-size: 1.5em;
-		margin: 0 0 0.25em 0;
-		text-align: left;
-	}
 	th, td {
 		padding: 0.5em;
 	}
 	thead {
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: lighten(#000, 70%);
 		color: #fff;
 		th {
 			text-align: right;
@@ -47,4 +54,18 @@ table.basket {
 			text-align: left;
 		}
 	}
+}
+
+form.clear-basket {
+	text-align: right;
+	
+	button {
+		border: 1px solid #CCCCCC;
+		padding: 0.4em 0.2em 0.2em;
+	}
+}
+
+p.basket-empty {
+	font-size: 1.2em;
+	font-style: italic;
 }

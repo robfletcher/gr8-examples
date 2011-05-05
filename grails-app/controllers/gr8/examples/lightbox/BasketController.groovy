@@ -36,7 +36,11 @@ class BasketController {
 	
 	def clear = {
 		basket.clear()
-		redirect action: "show"
+		if (request.xhr) {
+			forward action: "show"
+		} else {
+			redirect action: "show"
+		}
 	}
 	
 	private Collection<Album> getBasket() {

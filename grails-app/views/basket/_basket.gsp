@@ -1,6 +1,8 @@
+<h2>Your basket</h2>
+
 <g:if test="${basket}">
+
 	<table class="basket">
-		<caption>Your basket</caption>
 		<thead>
 			<tr>
 				<th scope="col">Item</th>
@@ -24,7 +26,12 @@
 			</g:each>
 		</tbody>
 	</table>
+	
+	<g:form action="clear" class="clear-basket">
+		<button type="submit">Clear</button>
+	</g:form>
+	
 </g:if>
 <g:else>
-	<p>Your basket is empty</p>
+	<p class="basket-empty">Your basket is empty</p>
 </g:else>
