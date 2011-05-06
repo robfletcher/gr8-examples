@@ -14,6 +14,7 @@
                         Pagination
                         <ul>
                             <li><g:link controller="twitterSearch">Pagination -> Infinite scroll</g:link></li>
+                            <li><g:link controller="list">Pagination -> AJAX enabled pagination</g:link></li>
                         </ul>
                     </li>
                     <li>

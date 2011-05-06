@@ -73,7 +73,7 @@ modules = {
 	}
 	
 	list {
-		dependsOn "modernizr", "boilerplate", "ajaxify"
+		dependsOn "modernizr", "boilerplate", "ajaxify", "jquery-ui"
 		resource "js/list.js"
 		resource url: "css/list.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_list"
 	}
