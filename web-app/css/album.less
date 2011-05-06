@@ -1,0 +1,113 @@
+@large-image-size: 300px;
+@small-image-size: 115px;
+
+em {
+	font-style: italic;
+}
+
+#album {
+    border: 1px solid #ccc;
+	margin: 1em;
+	padding: 1em;
+	overflow: hidden;
+
+	hgroup {
+	    h1 {
+	    	font-size: 2em;
+	    }
+	 	h2 {
+			color: lighten(#333, 20%);
+	 		font-size: 1.5em;
+			font-style: italic;
+	 	}
+	}
+
+	img {
+	    float: left;
+	    margin: 0 1em 1em 0;
+	}
+
+	ol.tracks {
+		clear: both;
+	    font-size: 1.1em;
+		list-style-position: inside;
+		margin: 0.5em 0 0 0;
+	}
+
+	form.rating {
+		legend {
+		    float: left;
+			line-height: 1.2em;
+			margin: 0 0.5em 0 0;
+		}
+
+		label {
+		    font-size: 1.2em;
+			line-height: 1.2em;
+			margin: 0 0 0 0.5em;
+			.num {
+				vertical-align: middle;
+			}
+			input {
+			    margin: 0 0 0 0.5em;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+#related {
+    border: 1px solid #ccc;
+	clear: both;
+	margin: 0 1em 1em 1em;
+	padding: 1em;
+	overflow: hidden;
+
+	header h1 {
+		font-size: 1.3em;
+		margin: 0 0 0.5em 0;
+	}
+
+	ul {
+	    margin: 0;
+		overflow: hidden;
+
+		li {
+			float: left;
+			list-style-type: none;
+			margin: 0 2em 0 0;
+			width: @small-image-size;
+
+			h1 {
+				font-size: 1.1em;
+			}
+			h2 {
+				color: lighten(#333, 20%);
+				font-style: italic;
+			}
+		}
+	}
+
+	img {
+		width: @small-image-size;
+		height: @small-image-size;
+	}
+}
+
+#add-to-basket {
+	font-size: 1.5em;
+	margin: 1em 0;
+	.price {
+		display: inline-block;
+		font-weight: bold;
+		vertical-align: middle;
+	}
+	form {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	button {
+		border: 1px solid #ccc;
+		padding: 0.4em 0.2em 0.2em;
+	}
+}

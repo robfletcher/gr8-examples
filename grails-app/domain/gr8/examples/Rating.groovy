@@ -1,4 +1,4 @@
-package gr8.examples.forms
+package gr8.examples
 
 class Rating {
 

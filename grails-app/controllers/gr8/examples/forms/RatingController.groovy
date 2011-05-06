@@ -1,5 +1,6 @@
 package gr8.examples.forms
 
+import gr8.examples.*
 import javax.servlet.http.*
 import static javax.servlet.http.HttpServletResponse.*
 
@@ -16,7 +17,7 @@ class RatingController {
     def album = {
 		def model = [album: params.album]
 		model.rating = Rating.findByAlbumAndUserToken(params.album, userToken)
-		model.related = Album.list() - params.album
+		model.related = Album.list(max: 5) - params.album
 		model
 	}
 

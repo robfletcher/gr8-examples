@@ -9,6 +9,11 @@ modules = {
 		resource url: "css/handheld.css", attrs: [media: "handheld"]
 	}
 	
+	ajaxify {
+		dependsOn "jquery"
+		resource "js/plugins/ajaxify.js"
+	}
+	
 	facebox {
 		dependsOn "jquery"
 		resource "js/plugins/facebox/facebox.js"
@@ -57,6 +62,7 @@ modules = {
 	rating {
 		dependsOn "modernizr", "boilerplate", "star-rating"
 		resource "js/rating.js"
+		resource url: "css/album.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_rating"
 		resource url: "css/rating.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_rating"
 	}
 	
@@ -64,6 +70,12 @@ modules = {
 		dependsOn "modernizr", "boilerplate", "facebox"
 		resource "js/basket.js"
 		resource url: "css/basket.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_basket"
+	}
+	
+	list {
+		dependsOn "modernizr", "boilerplate", "ajaxify"
+		resource "js/list.js"
+		resource url: "css/list.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_list"
 	}
 	
 }

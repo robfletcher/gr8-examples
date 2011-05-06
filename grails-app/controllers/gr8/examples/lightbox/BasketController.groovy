@@ -1,6 +1,6 @@
 package gr8.examples.lightbox
 
-import gr8.examples.forms.*
+import gr8.examples.*
 import org.apache.commons.collections.CollectionUtils
 import static javax.servlet.http.HttpServletResponse.*
 
