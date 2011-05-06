@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<title>${album.title}</title>
-		<r:use modules="forms,lightbox,basket"/>
+		<r:use modules="rating,basket"/>
 	</head>
 	<body>
 

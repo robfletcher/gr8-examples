@@ -37,10 +37,10 @@ modules = {
         resource url: "css/index.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_index"
     }
 	
-	scroll {
+	twitter {
 		dependsOn "modernizr", "boilerplate", "infinite-scroll"
-		resource "js/scroll.js"
-		resource url: "css/scroll.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_scroll"
+		resource "js/twitter.js"
+		resource url: "css/twitter.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 
 	graphs {
@@ -54,20 +54,16 @@ modules = {
 		resource url: "css/polls.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_polls"
 	}
 
-	forms {
+	rating {
 		dependsOn "modernizr", "boilerplate", "star-rating"
-		resource "js/forms.js"
-		resource url: "css/forms.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_forms"
-	}
-	
-	lightbox {
-		dependsOn "facebox"
-		resource "js/lightbox.js"
+		resource "js/rating.js"
+		resource url: "css/rating.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_rating"
 	}
 	
 	basket {
-		dependsOn "modernizr", "boilerplate"
-		resource url: "css/basket.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_lightbox"
+		dependsOn "modernizr", "boilerplate", "facebox"
+		resource "js/basket.js"
+		resource url: "css/basket.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_basket"
 	}
 	
 }
