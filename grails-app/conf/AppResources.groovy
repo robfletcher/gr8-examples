@@ -24,6 +24,11 @@ modules = {
 		dependsOn "jquery"
 		resource "js/plugins/infinite-scroll.js"
 	}
+	
+	raphael {
+		dependsOn "jquery"
+		resource url: "js/libs/raphael-min.js", disposition: "head"
+	}
 
 	visualize {
 		dependsOn "jquery"
@@ -49,8 +54,8 @@ modules = {
 	}
 
 	graphs {
-		dependsOn "modernizr", "boilerplate", "visualize"
-        resource "js/graphs.js"
+		dependsOn "modernizr", "boilerplate", "raphael"
+        resource url: "js/graphs.js", disposition: "head"
 		resource url: "css/graphs.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 	

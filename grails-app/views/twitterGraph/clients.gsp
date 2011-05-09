@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
-		<title>Twitter Results for '${q}'</title>
+		<title>Twitter clients tweeting about '${q}'</title>
 		<r:use module="graphs"/>
 	</head>
 

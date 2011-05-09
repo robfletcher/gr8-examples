@@ -10,6 +10,9 @@
 		<section id="album-list">
 			
 			<table>
+				<col class="cover">
+				<col class="title">
+				<col class="artist">
 				<thead>
 					<tr>
 						<td></td>

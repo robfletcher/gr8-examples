@@ -1,9 +1,10 @@
 $(function() {
 	if (Modernizr.history) {
 		$('#album-list').ajaxify().live('list:loading', function() {
-			$(this).hide('slide');
+			$(this).fadeOut('fast');
 		}).live('list:complete', function() {
-			$(this).show('slide');
+			var direction = $(this).nextAll().filter('.currentStep').size() > 0 ? 'left' : 'right';
+			$(this).fadeIn('fast');
 		});
 	}
 });
