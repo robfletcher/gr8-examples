@@ -26,7 +26,6 @@
                     <li>
                         Charts
                         <ul>
-                            <li><g:link controller="twitterGraph" action="users">Table -> Bar chart</g:link></li>
                             <li><g:link controller="twitterGraph" action="clients">Table -> Pie chart</g:link></li>
                         </ul>
                     </li>

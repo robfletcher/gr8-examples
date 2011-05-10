@@ -1,9 +1,5 @@
 modules = {
 	
-	modernizr {
-		resource url: "js/libs/modernizr-1.7.min.js", disposition: "head"
-	}
-	
 	boilerplate {
 		resource url: "css/style.css"
 		resource url: "css/handheld.css", attrs: [media: "handheld"]
@@ -35,13 +31,6 @@ modules = {
 		resource url: "js/libs/raphael-min.js", disposition: "head"
 	}
 
-	visualize {
-		dependsOn "jquery"
-		resource "js/plugins/visualize/visualize.jQuery.js"
-		resource "js/plugins/visualize/css/visualize.css"
-		resource "js/plugins/visualize/css/visualize-light.css"
-	}
-	
 	"star-rating" {
 		dependsOn "jquery"
 		resource "js/plugins/star-rating.js"
@@ -57,11 +46,6 @@ modules = {
         resource url: "js/graphs.js", disposition: "head"
 	}
 	
-	polls {
-		dependsOn "modernizr", "boilerplate"
-		resource url: "css/polls.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_polls"
-	}
-
 	rating {
 		dependsOn "gr8", "star-rating"
 		resource "js/rating.js"
