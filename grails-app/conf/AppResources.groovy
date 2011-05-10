@@ -9,6 +9,11 @@ modules = {
 		resource url: "css/handheld.css", attrs: [media: "handheld"]
 	}
 	
+	gr8 {
+		dependsOn "modernizr", "boilerplate"
+		resource url: "css/gr8.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_gr8"
+	}
+	
 	ajaxify {
 		dependsOn "jquery"
 		resource "js/plugins/ajaxify.js"
@@ -42,21 +47,14 @@ modules = {
 		resource "js/plugins/star-rating.js"
 	}
 
-    index {
-        dependsOn "modernizr", "boilerplate"
-        resource url: "css/index.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_index"
-    }
-	
 	twitter {
-		dependsOn "modernizr", "boilerplate", "infinite-scroll"
+		dependsOn "gr8", "infinite-scroll"
 		resource "js/twitter.js"
-		resource url: "css/twitter.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 
 	graphs {
-		dependsOn "modernizr", "boilerplate", "raphael"
+		dependsOn "gr8", "raphael"
         resource url: "js/graphs.js", disposition: "head"
-		resource url: "css/graphs.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_twitter"
 	}
 	
 	polls {
@@ -65,22 +63,18 @@ modules = {
 	}
 
 	rating {
-		dependsOn "modernizr", "boilerplate", "star-rating"
+		dependsOn "gr8", "star-rating"
 		resource "js/rating.js"
-		resource url: "css/album.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_rating"
-		resource url: "css/rating.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_rating"
 	}
 	
 	basket {
-		dependsOn "modernizr", "boilerplate", "facebox"
+		dependsOn "gr8", "facebox"
 		resource "js/basket.js"
-		resource url: "css/basket.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_basket"
 	}
 	
 	list {
-		dependsOn "modernizr", "boilerplate", "ajaxify", "jquery-ui"
+		dependsOn "gr8", "ajaxify", "jquery-ui"
 		resource "js/list.js"
-		resource url: "css/list.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_list"
 	}
 	
 }

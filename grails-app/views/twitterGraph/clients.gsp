@@ -9,10 +9,9 @@
 	<body>
 
 		<table id="twitter-clients">
-			<caption>Twitter clients</caption>
 			<thead>
 				<tr>
-					<td></td>
+					<th scope="col">Client</th>
 					<th scope="col">Tweets</th>
 				</tr>
 			</thead>

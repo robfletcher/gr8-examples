@@ -8,7 +8,7 @@
 		var starContainer = $('<div class="star-rating"></div>');
 		for (var i = 1; i <= 5; i++) {
 			var radio = radios.filter('[value=' + i + ']');
-			var star = $('<a href="#" class="star">' + i + '</a>');
+			var star = $('<a href="#" class="star">&#9733;</a>');
 			star.appendTo(starContainer);
 			// the star and the radio update each other so bind them together using data
 			star.data('radio', radio);
@@ -18,7 +18,7 @@
 		// when the user clicks on one of the stars update the associated radio and submit the form
 		var stars = starContainer.find('a');
 		stars.click(function() {
-			$(this).data('radio').attr('checked', 'checked').change();
+			$(this).data('radio').prop('checked', true).change();
 			form.submit();
 			return false;
 		});
@@ -74,7 +74,7 @@
 		// create the elements representing the stars
 		var starContainer = $('<div class="star-rating"></div>');
 		for (var i = 1; i <= 5; i++) {
-			var star = $('<span class="star">' + i + '</span>');
+			var star = $('<span class="star">&#9733;</span>');
 			if (i <= score) {
 				star.addClass('on');
 			}

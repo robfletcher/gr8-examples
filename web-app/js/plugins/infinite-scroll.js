@@ -18,7 +18,7 @@
 						container.append(elements);
 						nextPage = $(data).find('a.next').attr('href');
 					} else {
-						container.append('<div class="end">End</div>');
+						container.append('<div class="end" lang="fr">fin!</div>');
 						$(window).unbind('scroll', scrollHandler);
 					}
 					busy = false;

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<title>${album.title}</title>
+		<title>${album}</title>
 		<r:use modules="rating,basket"/>
 	</head>
 	<body>
@@ -34,7 +34,7 @@
 					<g:radioGroup name="score" values="${1..5}" labels="${1..5}" value="${rating?.score}">
 						<label><span class="num">${it.label}</span>${it.radio}</label>
 					</g:radioGroup>
-					<input type="submit" value="Rate">
+					<button type="submit">Rate</button>
 				</g:form>
 			</section>
 

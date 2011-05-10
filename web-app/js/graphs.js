@@ -39,7 +39,7 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
 };
 
 var CX = 350;
-var CY = 230;
+var CY = 250;
 
 var segments = [];
 
@@ -73,6 +73,6 @@ $(function() {
             labels.push($("th", this).text() + ' (' + $('td', this).text() + ')');
         });
         $("table").hide();
-        raphael("holder", 700, 500).pieChart(CX, CY, 200, values, labels, "#fff");
+        raphael("holder", CX * 2, (CY * 2) + 40).pieChart(CX, CY, 200, values, labels, "#fff");
     });
 })(Raphael.ninja());

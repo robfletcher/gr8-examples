@@ -3,7 +3,7 @@
 <head>
 	<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
 	<title>Twitter Results for '${q}'</title>
-	<r:use module="scroll"/>
+	<r:use module="twitter"/>
 </head>
 <body>
 	<section id="twitter-search-results">

@@ -1,0 +1,505 @@
+@headerbg: #000066;
+@headertext: #ffcccc;
+@background: #2E2E2E;
+@content-bg: #191919;
+@text-color: #EAF2D9;
+@link-color: #DCDC9E;
+@link-hover-color: lighten(@link-color, 20%);
+
+@body-text-size: 18px;
+@header-text-size: 24px;
+@gutter: 20px;
+@half-gutter: @gutter / 2;
+
+@large-image-size: 300px;
+@small-image-size: 115px;
+
+.content() {
+	background: @content-bg;
+	border: 1px dashed #808080;
+	margin-bottom: @gutter;
+	padding: @gutter;
+}
+
+.text-shadow(@color) {
+	text-shadow: 0 0 5px @color
+}
+
+.box-shadow(@radius: 5px, @color) {
+     -moz-box-shadow: 0px 0px @radius @color; 
+  -webkit-box-shadow: 0px 0px @radius @color; 
+          box-shadow: 0px 0px @radius @color; 
+}
+
+.box-round(@radius) {
+     -moz-border-radius: @radius; 
+  -webkit-border-radius: @radius; 
+          border-radius: @radius; 
+   -moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+        background-clip: padding-box; 
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	background: @background;
+    color: @text-color;
+	font-size: @body-text-size;
+	margin: 0 auto;
+	max-width: 960px;
+    min-height: 100%;
+}
+
+a:link, a:visited {
+	color: @link-color;
+}
+
+a:active, a:hover {
+	color: @link-hover-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+em {
+	font-style: italic;
+}
+
+button {
+	background-color: @link-color;
+	border: 3px solid transparent;
+	padding: 4px 2px 2px;
+	.box-round(10px);
+	.box-shadow(5px, @link-color);
+	
+	&:hover, &:focus {
+		background-color: @link-hover-color;
+		.box-shadow(5px, @link-hover-color);
+	}
+}
+
+body > header {
+	padding: @gutter;
+}
+
+body > header h1 {
+	font-size: @header-text-size;
+	font-weight: bold;
+	text-align: center;
+}
+
+// Index page
+
+#index {
+	.content;
+    ul {
+        margin-left: @gutter;
+        li {
+            margin: @gutter 0;        
+        }
+        ul li {
+            list-style-type: disc;
+            margin: 0;
+        }
+    }
+}
+
+// Album page
+
+#album {
+	.content;
+	overflow: hidden;
+
+	hgroup {
+	    h1 {
+	    	font-size: @header-text-size;
+	    }
+	 	h2 {
+	 		font-size: @header-text-size;
+			font-style: italic;
+	 	}
+	}
+
+	img {
+	    float: left;
+	    margin: 0 @gutter @gutter 0;
+	}
+
+	ol.tracks {
+		clear: both;
+		list-style-position: inside;
+		margin-top: @gutter;
+	}
+
+	form.rating {
+		label {
+			margin-right: @half-gutter;
+			.num {
+				vertical-align: middle;
+			}
+			input {
+			    margin-left: @half-gutter;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+#related {
+    .content;
+	clear: both;
+	overflow: hidden;
+
+	header h1 {
+		font-size: @header-text-size;
+		margin-bottom: @half-gutter;
+	}
+
+	ul {
+	    margin: 0;
+		overflow: hidden;
+
+		li {
+			float: left;
+			list-style-type: none;
+			margin-right: @gutter;
+			width: @small-image-size;
+
+			h2 {
+				font-style: italic;
+			}
+		}
+	}
+
+	img {
+		width: @small-image-size;
+		height: @small-image-size;
+	}
+}
+
+#add-to-basket {
+	margin: @gutter 0;
+	.price {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	form {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	button { 
+		margin-left: @half-gutter;
+	}
+}
+
+// Rating widget
+
+@star-size: 30px;
+@star-off-color: #fff;
+@star-hover-color: lighten(#f00, 10%);
+@star-on-color: #FFBF00;
+
+#average-rating {
+	margin-top: @half-gutter;
+
+	.star-rating {
+		opacity: 0.5;
+	}		
+}
+
+#your-rating {
+	margin-top: @half-gutter;
+}
+
+.star-rating {
+	display: inline-block;
+	vertical-align: middle;
+	.star {
+		color: @star-off-color;
+		display: inline-block;
+		font-size: @star-size;
+		line-height: @star-size;
+		vertical-align: middle;
+		width: @star-size;
+		height: @star-size;
+		opacity: 0.5;
+		text-decoration: none;
+		&.on {
+			color: @star-on-color;
+			opacity: 1;
+			.text-shadow(@star-on-color);
+		}
+	}
+	a.star.hovered {
+		color: @star-hover-color;
+		opacity: 1;
+		.text-shadow(@star-hover-color);
+	}
+}
+
+.message {
+	color: @star-on-color;
+	display: inline-block;
+	margin-left: @half-gutter;
+	vertical-align: middle;
+	.text-shadow(@star-on-color);
+}
+
+// Basket page and popup
+
+#facebox {
+	h2 {
+		font-size: @header-text-size;
+		margin-bottom: @half-gutter;
+	}
+}
+
+.your-basket {
+	.content;
+	h2 {
+		font-size: @header-text-size;
+		margin-bottom: @half-gutter;
+	}
+}
+
+table.basket {
+	font-size: @body-text-size;
+	width: 100%;
+	th, td {
+		padding: @half-gutter;
+	}
+	thead {
+		background-color: @content-bg;
+		color: #fff;
+		th {
+			text-align: right;
+			&:first-child {
+				text-align: left;
+			}
+		}
+	}
+	tbody {
+	    tr:nth-child(even) {
+			background: @content-bg;
+	    }
+		td {
+			text-align: right;
+			&:first-child {
+				text-align: left;
+			}
+		}
+	}
+	tfoot {
+		border-color: #808080;
+		border-style: solid;
+		border-width: 1px 0 0 0;
+		font-weight: bold;
+		td {
+			text-align: right;
+		}
+		th {
+			text-align: left;
+		}
+	}
+}
+
+form.clear-basket {
+	text-align: right;
+}
+
+p.basket-empty {
+	font-style: italic;
+}
+
+// Graph backing table
+
+#holder {
+	margin: 0 auto;
+	width: 700px;
+	height: 540px;
+}
+
+table#twitter-clients {
+	.content;
+	font-size: @body-text-size + 4;
+    margin: 0 auto;
+
+    thead {
+    	th {
+    		padding: @half-gutter;
+    	}
+    }
+
+	tbody {
+	    tr:nth-child(even) {
+			background: lighten(@content-bg, 5%);
+	    }
+	    td, th {
+	 		vertical-align: middle;
+	    }
+		td {
+	    	padding: 0 @half-gutter;
+			text-align: right;
+		}
+		th {
+		    padding: @half-gutter;
+	  		text-align: left;
+		}
+	}
+}
+
+// Twitter search
+
+@profile-image-size: 48px;
+
+#twitter-search-results {
+	.pagination {
+		margin-bottom: @gutter;
+		overflow: hidden;
+		a {
+			font-size: @header-text-size;
+			&.prev {
+				float: left;
+			}
+			&.next {
+				float: right;
+			}
+		}
+	}
+
+	.loading {
+		background: url(../images/loading.gif) 50% 50% no-repeat transparent;
+		height: 64px;
+		margin-bottom: @gutter;
+		padding: @gutter;
+		text-indent: -9999px;
+	}
+
+	.end {
+		font-family: cursive;
+		font-size: @header-text-size;
+		font-style: italic;
+		margin-bottom: @gutter;
+		padding: @gutter;
+		text-align: center;
+	}
+}
+
+.tweet {
+	.content;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	header {
+		margin-bottom: @half-gutter;
+		position: relative;
+	}
+
+	h3 {
+		font-size: @header-text-size;
+		line-height: @profile-image-size;
+		margin-left: @profile-image-size;
+		text-indent: @half-gutter;
+	}
+
+	img.profile-image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: @profile-image-size;
+		height: @profile-image-size;
+	}
+
+	p {
+		font-size: @header-text-size;
+	}
+
+	time {
+		display: block;
+		margin-top: @half-gutter;
+	}
+}
+
+// Album list pagination
+
+#album-list {
+	.content;
+
+	table {
+		width: 100%;
+
+		col.cover {
+			width: @small-image-size;
+		}
+		col.artist {
+			width: 50%;
+		}
+
+	    td, th {
+			font-size: @body-text-size;
+	    	padding: @half-gutter;
+			text-align: left;
+	 		vertical-align: middle;
+	    }
+
+		img {
+			width: @small-image-size;
+			height: @small-image-size;
+		}
+
+		thead {
+			background-color: @background;
+			color: #fff;
+			a {
+				color: #fff;
+				text-decoration: none;
+
+				&:visited {
+					color: #fff;
+				}
+
+				&:hover {
+					color: #fff;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		tbody {
+		    tr:nth-child(even) {
+				background: lighten(@content-bg, 5%);
+		    }
+		}
+	}
+
+	.pagination {
+		background-color: @background;
+		margin: @gutter 0;
+		min-height: @gutter;
+		padding: @half-gutter;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			padding: 5px 9px 3px;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.currentStep {
+			background: @content-bg;
+			display: inline-block;
+			padding: 5px 9px 3px;
+			.box-round(3px);
+		}
+	}}

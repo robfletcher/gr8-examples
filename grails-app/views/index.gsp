@@ -3,7 +3,7 @@
     <head>
         <title>Building Progressive UIs with Grails</title>
         <meta name="layout" content="main" />
-        <r:use module="index"/>
+        <r:use module="gr8"/>
     </head>
     <body>
         <section id="index">
