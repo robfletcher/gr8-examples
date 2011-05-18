@@ -44,17 +44,19 @@
 		
 		// the form should submit via AJAX instead of as a regular form submission
 		form.submit(function() {
-			$.post(form.attr('action'), form.serialize(), function(message) {
+			$.post(form.attr('action'), form.serialize(), function(response) {
 				var messageContainer = starContainer.find('.message') 
 				if (messageContainer.size()) {
-					messageContainer.text(message);
+					messageContainer.text(response.message);
 				} else {
-					messageContainer = $('<span class="message">' + message + '</span>');
+					messageContainer = $('<span class="message">' + response.message + '</span>');
 					starContainer.append(messageContainer);
 				}
 				messageContainer.fadeOut(3000, function() {
 					messageContainer.detach();
 				});
+				
+				form.trigger('ratingupdate', response.averageRating);
 			});
 			return false;
 		});
@@ -65,23 +67,46 @@
 
 		// trigger a change event on the radios so the initial star state is correct
 		radios.change();
+		
+		return form;
 	};
 
-	$.fn.starRating = function() {
-		var container = $(this);
-		var score = Math.round(parseFloat(container.text()));
+})(jQuery);	
+	
+(function($) {
 
-		// create the elements representing the stars
-		var starContainer = $('<div class="star-rating"></div>');
-		for (var i = 1; i <= 5; i++) {
-			var star = $('<span class="star">&#9733;</span>');
-			if (i <= score) {
-				star.addClass('on');
+	var methods = {
+	    init: function(options) {
+			var el = $(this).find('.rating');
+
+			// create the elements representing the stars
+			var stars = $('<div class="star-rating"></div>');
+			for (var i = 1; i <= 5; i++) {
+				var star = $('<span class="star" data-rating="' + i + '">&#9733;</span>');
+				star.appendTo(stars);
 			}
-			star.appendTo(starContainer);
-		}
 
-		container.replaceWith(starContainer);
+			el.replaceWith(stars);
+
+			var score = Math.round(parseFloat(el.text()));
+			$(this).starRating('update', score);
+		},
+	    update: function(value) {
+			var star = $(this).find('[data-rating=' + value + ']');
+			star.prevAll().andSelf().addClass('on');
+			star.nextAll().removeClass('on');
+			return $(this);
+		}
+	};
+
+	$.fn.starRating = function(method) {
+	    if ( methods[method] ) {
+	    	return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+	    } else if ( typeof method === 'object' || ! method ) {
+	    	return methods.init.apply( this, arguments );
+	    } else {
+	    	$.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' );
+	    }    
 	}
 	
 })(jQuery);

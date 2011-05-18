@@ -28,13 +28,16 @@ class RatingController {
 		}
 		
 		rating.score = params.int("score")
-		if (!rating.save()) {
+		if (!rating.save(flush: true)) {
 			response.sendError SC_CONFLICT, errorMessage(rating)
 			return
 		}
 		
 		if (request.xhr) {
-			render contentType: "text/plain", text: "Thanks!"
+			render(contentType: "application/json") {
+				message = "Thanks!"
+				averageRating = params.album.averageRating
+			}
 		} else {
 			redirect action: "album", id: params.album.id
 		}
