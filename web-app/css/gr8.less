@@ -82,12 +82,26 @@ button {
 
 body > header {
 	padding: @gutter;
-}
+	position: relative;
 
-body > header h1 {
-	font-size: @header-text-size;
-	font-weight: bold;
-	text-align: center;
+	h1 {
+		font-size: @header-text-size;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	#home-link {
+		@home-icon-size: 32px;
+		@home-icon-pos: @gutter - ((@home-icon-size - @header-text-size) / 2);
+		
+		position: absolute;
+		right: @home-icon-pos;
+		top: @home-icon-pos;
+		img {
+			width: @home-icon-size;
+			height: @home-icon-size;
+		}
+	}
 }
 
 // Index page

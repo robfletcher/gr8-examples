@@ -19,6 +19,7 @@
 	<body>
 		<header>
 			<h1><g:layoutTitle default="Building Progressive UIs With Grails"/></h1>
+			<a id="home-link" href="${createLink(uri: '/')}" title="Home"><r:img uri="/images/home.png"/></a>
 		</header>
 
 		<div id="main" role="main">
