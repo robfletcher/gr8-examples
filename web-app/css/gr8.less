@@ -37,6 +37,14 @@
           border-radius: @radius; 
 }
 
+.opacity-transition() {
+     -moz-transition: opacity 0.3s ease-out;  
+       -o-transition: opacity 0.3s ease-out;  
+  -webkit-transition: opacity 0.3s ease-out;  
+      -ms-transition: opacity 0.3s ease-out;  
+          transition: opacity 0.3s ease-out;  
+}
+
 html {
 	min-height: 100%;
 }
@@ -49,6 +57,13 @@ body {
 	margin: 0 auto;
 	max-width: 960px;
     min-height: 100%;
+	opacity: 0;
+	.opacity-transition;
+}
+
+.no-js body,
+body.ready {
+	opacity: 1;
 }
 
 a:link, a:visited {

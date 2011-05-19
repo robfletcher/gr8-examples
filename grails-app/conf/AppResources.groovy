@@ -6,7 +6,8 @@ modules = {
 	}
 	
 	gr8 {
-		dependsOn "modernizr", "boilerplate"
+		dependsOn "modernizr", "boilerplate", "jquery"
+		resource "js/fouc.js"
 		resource url: "css/gr8.less" ,attrs:[rel: "stylesheet/less", type: "css"], bundle: "bundle_gr8"
 	}
 	
