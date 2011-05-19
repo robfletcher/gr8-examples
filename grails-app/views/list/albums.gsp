@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<g:if test="${!request.xhr}"><meta name="layout" content="main"></g:if>
 		<title>Album List</title>
 		<r:use module="list"/>
 	</head>
